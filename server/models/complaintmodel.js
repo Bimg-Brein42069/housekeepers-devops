@@ -1,15 +1,11 @@
 const mongoose=require('mongoose')
 const Schema=mongoose.Schema
 const complaintSchema=new Schema({
-    title: {
+    desc: {
         type: String,
         required: true
     },
-    reps: {
-        type: Number,
-        required: true
-    },
-    load: {
+    priority: {
         type: Number,
         required: true
     }

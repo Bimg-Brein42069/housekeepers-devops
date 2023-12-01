@@ -1,12 +1,12 @@
-const Complaint=require('../models/complaintmodel')
+const Complaint = require('../models/complaintmodel')
 const mongoose = require('mongoose')
 
-const getcomplaints=async(req,res) => {
-    const complaints= await Complaint.find({}).sort({createdAt: -1})
+const getComplaints=async(req,res) => {
+    const complaints= await Complaint.find({}).sort({priority: -1,createdAt: 1})
     res.status(200).json(complaints)
 }
 
-const getcomplaint=async(req,res) => {
+const getComplaint=async(req,res) => {
     const { id } = req.params
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such complaint'})
@@ -18,17 +18,30 @@ const getcomplaint=async(req,res) => {
     res.status(200).json(complaint)
 }
 
-const createcomplaint= async (req,res) => {
-    const {title,load,reps} = req.body
+const createComplaint= async (req,res) => {
+    const {desc, priority} = req.body
+
+    let emptyFields = []
+
+    if(!desc){
+        emptyFields.push('desc')
+    }
+    if(!priority){
+        emptyFields.push('priority')
+    }
+    if(emptyFields.length > 0){
+        return res.status(400).json({ error: 'Please fill in all fields', emptyFields })
+    }
+
     try{
-        const complaint=await Complaint.create({title,load,reps})
+        const complaint=await Complaint.create({desc, priority})
         res.status(200).json(complaint)
     }catch(err){
         res.status(400).json({error: err.message})
     }
 }
 
-const deletecomplaint= async (req,res) => {
+const deleteComplaint= async (req,res) => {
     const { id } = req.params;
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such complaint'})
@@ -40,7 +53,7 @@ const deletecomplaint= async (req,res) => {
     res.status(200).json(complaint)
 }
 
-const updatecomplaint= async (req,res) => {
+const updateComplaint= async (req,res) => {
     const { id } = req.params;
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such complaint'})
@@ -55,9 +68,9 @@ const updatecomplaint= async (req,res) => {
 }
 
 module.exports = {
-    getcomplaints,
-    getcomplaint,
-    createcomplaint,
-    deletecomplaint,
-    updatecomplaint
+    getComplaints,
+    getComplaint,
+    createComplaint,
+    deleteComplaint,
+    updateComplaint
 }
