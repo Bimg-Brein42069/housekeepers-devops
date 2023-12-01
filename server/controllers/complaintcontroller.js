@@ -2,7 +2,8 @@ const Complaint = require('../models/complaintmodel')
 const mongoose = require('mongoose')
 
 const getComplaints=async(req,res) => {
-    const complaints= await Complaint.find({}).sort({priority: -1,createdAt: 1})
+    const user_id = req.user._id
+    const complaints= await Complaint.find({user_id}).sort({priority: -1,createdAt: 1})
     res.status(200).json(complaints)
 }
 
@@ -34,7 +35,8 @@ const createComplaint= async (req,res) => {
     }
 
     try{
-        const complaint=await Complaint.create({desc, priority})
+        const user_id= req.user._id
+        const complaint=await Complaint.create({desc, priority,user_id})
         res.status(200).json(complaint)
     }catch(err){
         res.status(400).json({error: err.message})
