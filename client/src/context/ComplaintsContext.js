@@ -22,12 +22,26 @@ export const ComplaintReducer = (state, action) => {
       }
     case 'UPDATE_COMPLAINT':
       return { 
-        complaints: [action.payload,state.complaints.filter(w => w._id !== action.payload._id)].sort((a,b) =>{
+        complaints: [...state.complaints.filter( (w) => {
+          if(w._id === action.payload._id){
+              switch(w.stats){
+                case 'Sent':
+                  w.stats='Resolving...'
+                  return w
+                case 'Resolving':
+                  w.stats='Resolved'
+                  return w
+                default:
+                  return w
+              }
+          }
+          return w
+        })].sort((a,b) =>{
           if(a.priority === b.priority)
-            return a.createdAt-b.createdAt
+            return a.createdAt > b.createdAt ? 1 : -1
           return b.priority-a.priority
         }) 
-      }  
+      }
     default:
       return state
   }

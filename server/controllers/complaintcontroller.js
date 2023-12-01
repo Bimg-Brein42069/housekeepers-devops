@@ -72,11 +72,21 @@ const updateComplaint= async (req,res) => {
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such complaint'})
     }
-    const complaint = await Complaint.findOneAndUpdate({_id:id},{stats:'Resolving'}) 
+
+    const complaint = await Complaint.findOneAndUpdate({$and:[{_id:id,stats:'Sent'}]},{
+        stats:'Resolving',
+    }) 
+    
     if(!complaint){
-        return res.status(404).json({error: 'No such complaint'})
+        const complaint = await Complaint.findOneAndUpdate({$and:[{_id:id,stats:'Resolving'}]},{
+            stats:'Resolved',
+        })
+        if(!complaint)
+            return res.status(404).json({error: 'No such complaint!'})
+        return res.status(200).json(complaint)
     }
-    res.status(200).json(complaint)
+    return res.status(200).json(complaint)
+
 }
 
 module.exports = {
