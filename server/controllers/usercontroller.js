@@ -13,7 +13,8 @@ const loginUser = async (req,res) => {
 
         //create token
         const token = createToken(user._id)
-        res.status(200).json({email,token})
+        const isAdmin = user.isAdmin
+        res.status(200).json({isAdmin,email,token})
     }catch(err){
         res.status(400).json({error: err.message})
     }
@@ -26,7 +27,21 @@ const signupUser = async (req,res) => {
         const user = await User.signup(name,email,roomno,password)
         //create token
         const token = createToken(user._id)
-        res.status(200).json({email,token})
+        const isAdmin = user.isAdmin
+        res.status(200).json({isAdmin,email,token})
+    }catch(err){
+        res.status(400).json({error: err.message})
+    }
+}
+
+const signupAdmin = async (req,res) => {
+    const {name,email,roomno,password} = req.body
+    try{
+        const user = await User.signupadmin(name,email,roomno,password)
+        //create token
+        const token = createToken(user._id)
+        const isAdmin = user.isAdmin
+        res.status(200).json({isAdmin,email,token})
     }catch(err){
         res.status(400).json({error: err.message})
     }
@@ -35,5 +50,6 @@ const signupUser = async (req,res) => {
 module.exports = {
     signupUser,
     loginUser,
+    signupAdmin,
     createToken
 }

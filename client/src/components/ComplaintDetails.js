@@ -28,6 +28,7 @@ const ComplaintDetails = ({ complaint }) => {
     <div className="complaint-details">
       <h4>{complaint.desc}</h4>
       <p><strong>Priority: </strong>{complaint.priority}</p>
+      <p><strong>Status: </strong>{complaint.stats}</p>
       <p>{formatDistanceToNow(new Date(complaint.createdAt), { addSuffix: true })}</p>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>

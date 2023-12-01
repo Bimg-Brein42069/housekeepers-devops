@@ -42,31 +42,33 @@ const ComplaintForm = () => {
     }
 
   }
+  if(!user.isAdmin){
+    return (
+      <form className="create" onSubmit={handleSubmit}> 
+        <h3>New Complaint</h3>
 
-  return (
-    <form className="create" onSubmit={handleSubmit}> 
-      <h3>New Complaint</h3>
+        <label>Complaint Description:</label>
+        <input 
+          type="text" 
+          onChange={(e) => setDesc(e.target.value)} 
+          value={desc}
+          className={emptyFields.includes('desc') ? 'error' : ''}
+        />
 
-      <label>Complaint Description:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setDesc(e.target.value)} 
-        value={desc}
-        className={emptyFields.includes('desc') ? 'error' : ''}
-      />
+        <label>Priority(higher number for higher priority):</label>
+        <input 
+          type="number" 
+          onChange={(e) => setPriority(e.target.value)} 
+          value={priority}
+          className={emptyFields.includes('priority') ? 'error' : ''}
+        />
 
-      <label>Priority(higher number for higher priority):</label>
-      <input 
-        type="number" 
-        onChange={(e) => setPriority(e.target.value)} 
-        value={priority}
-        className={emptyFields.includes('priority') ? 'error' : ''}
-      />
-
-      <button>Add Complaint</button>
-      {error && <div className="error">{error}</div>}
-    </form>
-  )
+        <button>Add Complaint</button>
+        {error && <div className="error">{error}</div>}
+      </form>
+    )
+  }
+  return <form></form>
 }
 
 export default ComplaintForm

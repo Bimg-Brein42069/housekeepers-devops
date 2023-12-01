@@ -1,10 +1,19 @@
 const Complaint = require('../models/complaintmodel')
+const User = require('../models/usermodel')
 const mongoose = require('mongoose')
 
 const getComplaints=async(req,res) => {
     const user_id = req.user._id
-    const complaints= await Complaint.find({user_id}).sort({priority: -1,createdAt: 1})
-    res.status(200).json(complaints)
+    const userad = await User.findById(user_id);
+    //const userad = req.user.isAdmin
+    if(userad.isAdmin.valueOf() === true){
+        const complaints= await Complaint.find({}).sort({priority: -1,createdAt: 1})
+        res.status(200).json(complaints)
+    }
+    else{
+        const complaints= await Complaint.find({user_id}).sort({priority: -1,createdAt: 1})
+        res.status(200).json(complaints)
+    }
 }
 
 const getComplaint=async(req,res) => {
@@ -33,10 +42,13 @@ const createComplaint= async (req,res) => {
     if(emptyFields.length > 0){
         return res.status(400).json({ error: 'Please fill in all fields', emptyFields })
     }
-
+    if(priority > 3)
+        priority=3
+    if(priority < 1)
+        priority=1
     try{
         const user_id= req.user._id
-        const complaint=await Complaint.create({desc, priority,user_id})
+        const complaint=await Complaint.create({desc, priority,stats:'Sent',user_id})
         res.status(200).json(complaint)
     }catch(err){
         res.status(400).json({error: err.message})
@@ -60,9 +72,7 @@ const updateComplaint= async (req,res) => {
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such complaint'})
     }
-    const complaint = await Complaint.findOneAndUpdate({_id:id},{
-        ...req.body
-    }) 
+    const complaint = await Complaint.findOneAndUpdate({_id:id},{stats:'Resolving'}) 
     if(!complaint){
         return res.status(404).json({error: 'No such complaint'})
     }

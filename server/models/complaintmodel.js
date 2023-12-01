@@ -9,6 +9,11 @@ const complaintSchema=new Schema({
         type: Number,
         required: true
     },
+    stats: {
+        type: String,
+        required: true,
+        enum: ['Sent','Resolving']
+    },
     user_id: {
         type: String,
         required: true
