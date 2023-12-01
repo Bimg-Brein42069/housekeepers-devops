@@ -12,7 +12,7 @@ export const ComplaintReducer = (state, action) => {
       return { 
         complaints: [action.payload, ...state.complaints].sort((a,b) =>{
           if(a.priority === b.priority)
-            return a.createdAt-b.createdAt
+            return a.createdAt > b.createdAt ? 1 : -1
           return b.priority-a.priority
         }) 
       }
