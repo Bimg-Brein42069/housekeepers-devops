@@ -48,7 +48,8 @@ const createComplaint= async (req,res) => {
         priority=1
     try{
         const user_id= req.user._id
-        const complaint=await Complaint.create({desc, priority,stats:'Sent',user_id})
+        const ruser = await User.findById(user_id)
+        const complaint=await Complaint.create({desc, priority,stats:'Sent',user_id,user_name:ruser.name,user_room:ruser.roomno})
         res.status(200).json(complaint)
     }catch(err){
         res.status(400).json({error: err.message})

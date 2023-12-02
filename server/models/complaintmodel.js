@@ -17,6 +17,14 @@ const complaintSchema=new Schema({
     user_id: {
         type: String,
         required: true
+    },
+    user_name:{
+        type: String,
+        required: true
+    },
+    user_room:{
+        type: String,
+        required: true
     }
 },{ timestamps: true})
 

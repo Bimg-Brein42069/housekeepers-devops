@@ -48,8 +48,7 @@ const ComplaintDetails = ({ complaint }) => {
           <p><strong>Priority: </strong>{complaint.priority}</p>
           <p><strong>Status: </strong>{complaint.stats}</p>
           <p>{formatDistanceToNow(new Date(complaint.createdAt), { addSuffix: true })}</p>
-          <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
-          <span2 className="material-symbols-outlined" onClick={handleClick2}>update</span2>
+          <span className="material-symbols-outlined" onClick={handleClick2}>update</span>
         </div>
       )
     }
@@ -69,6 +68,8 @@ const ComplaintDetails = ({ complaint }) => {
         <h4>{complaint.desc}</h4>
         <p><strong>Priority: </strong>{complaint.priority}</p>
         <p><strong>Status: </strong>{complaint.stats}</p>
+        <p><strong>Name of student:</strong>{complaint.user_name}</p>
+        <p><strong>Room number:</strong>{complaint.user_room}</p>
         <p>{formatDistanceToNow(new Date(complaint.createdAt), { addSuffix: true })}</p>
         <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
       </div>
@@ -80,6 +81,8 @@ const ComplaintDetails = ({ complaint }) => {
         <h4>{complaint.desc}</h4>
         <p><strong>Priority: </strong>{complaint.priority}</p>
         <p><strong>Status: </strong>{complaint.stats}</p>
+        <p><strong>Name of student:</strong>{complaint.user_name}</p>
+        <p><strong>Room number:</strong>{complaint.user_room}</p>
         <p>{formatDistanceToNow(new Date(complaint.createdAt), { addSuffix: true })}</p>
         <span className="material-symbols-outlined" onClick={handleClick2}>update</span>
       </div>
@@ -90,6 +93,8 @@ const ComplaintDetails = ({ complaint }) => {
       <h4>{complaint.desc}</h4>
       <p><strong>Priority: </strong>{complaint.priority}</p>
       <p><strong>Status: </strong>{complaint.stats}</p>
+      <p><strong>Name of student:</strong>{complaint.user_name}</p>
+      <p><strong>Room number:</strong>{complaint.user_room}</p>
       <p>{formatDistanceToNow(new Date(complaint.createdAt), { addSuffix: true })}</p>
     </div>
   )
