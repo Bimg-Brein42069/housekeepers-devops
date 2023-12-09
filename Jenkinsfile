@@ -14,12 +14,12 @@ pipeline{
         }
         stage('Build Server'){
             steps{
-                sh 'cd server && npm install --loglevel=error'
+                sh 'cd server && /usr/bin/npm install --loglevel=error'
             }
         }
         stage('Test API endpoints'){
             steps{
-                sh 'cd server && npm run test'
+                sh 'cd server && /usr/bin/npm run test'
             }
         }
         stage('Build Client'){
