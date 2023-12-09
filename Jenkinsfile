@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Stage 1: Clone git repo'){
             steps{
-                git branch:'master'
+                git branch:'master',
                 url:'https://github.com/Bimg-Brein42069/housekeepers-devops.git'
             }
         }
@@ -28,8 +28,8 @@ pipeline{
         }
         stage('Build docker images'){
             steps{
-                sh 'docker compose build'
-                docker_image_client='dspanihousekeep/client'
+                sh 'docker compose build',
+                docker_image_client='dspanihousekeep/client',
                 docker_image_server='dspanihousekeep/server'
             }
         }
