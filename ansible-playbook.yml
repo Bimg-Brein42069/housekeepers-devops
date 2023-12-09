@@ -1,0 +1,25 @@
+- name: Pull and Run docker image
+  hosts: localhost
+  tasks:
+    - name: Pull Housekeepers-Server image
+      docker_image:
+        name: dspanihousekeep/server
+        source: pull
+        pull : true
+    - name: Run docker server image
+      docker_container:
+        name: Housekeepers-Server
+        image: dspanihousekeep/server
+        ports: 
+          - "5000:5000"
+    - name: Pull Housekeepers-Client image
+      docker_image:
+        name: dspanihousekeep/client
+        source: pull
+        pull : true
+    - name: Run docker client image
+      docker_container:
+        name: Housekeepers-Client
+        image: dspanihousekeep/client
+        ports: 
+          - "3000:3000"

@@ -1,9 +1,11 @@
 services:
   webserver:
+    image: dspanihousekeep/server
     build: ./server
     ports: 
       - "5000:5000"
   webclient:
+    image: dspanihousekeep/client
     build: ./client
     ports:
       - "3000:3000"
