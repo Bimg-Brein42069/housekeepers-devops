@@ -18,12 +18,12 @@ pipeline{
         }
         stage('Test API endpoints'){
             steps{
-                sh 'npm run test'
+                sh 'cd server && npm run test'
             }
         }
         stage('Build Client'){
             steps{
-                sh 'cd ../client && npm install'
+                sh 'cd client && npm install'
             }
         }
         stage('Build docker images'){
