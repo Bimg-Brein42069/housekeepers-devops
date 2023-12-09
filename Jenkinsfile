@@ -30,7 +30,7 @@ pipeline{
         stage('Build docker images'){
             steps{
                 script{
-                    sh 'docker compose up --build'
+                    sh 'docker compose build'
                     docker_image_client='dspanihousekeep/client'
                     docker_image_server='dspanihousekeep/server'
                 }
