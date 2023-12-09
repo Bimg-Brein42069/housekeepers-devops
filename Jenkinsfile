@@ -28,9 +28,11 @@ pipeline{
         }
         stage('Build docker images'){
             steps{
-                docker_image_client=sh 'docker compose build',
-                docker_image_client='dspanihousekeep/client',
-                docker_image_server='dspanihousekeep/server'
+                script{
+                    sh 'docker compose build'
+                    docker_image_client='dspanihousekeep/client'
+                    docker_image_server='dspanihousekeep/server'
+                }
             }
         }
         stage('Push images to dockerhub'){
