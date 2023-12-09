@@ -31,7 +31,7 @@ pipeline{
         stage('Build docker images'){
             steps{
                 script{
-                    sh 'docker compose build'
+                    sh "docker compose build"
                     docker_image_client='dspani/housekeepclient:latest'
                     docker_image_server='dspani/housekeepserver:latest'
                 }
@@ -58,7 +58,7 @@ pipeline{
             steps{
                 ansiblePlaybook becomeUser:null,
                 colorized: true,
-                credentialsId: 'localhost',
+                credentialsId: 'localhostCreds',
                 disableHostKeyChecking: true,
                 installation: 'Ansible',
                 inventory: './inventoryFile',

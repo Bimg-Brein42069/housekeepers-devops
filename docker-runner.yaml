@@ -1,0 +1,14 @@
+services:
+  webserver:
+    image: "dspani/housekeepserver"
+    ports: 
+      - "5000:5000"
+  webclient:
+    image: "dspani/housekeepclient"
+    ports:
+      - "3000:3000"
+    network_mode: host
+    depends_on:
+      - webserver
+  redis:
+    image: "redis:alpine"
