@@ -31,8 +31,8 @@ pipeline{
             steps{
                 script{
                     sh 'docker compose build'
-                    docker_image_client='dspanihousekeep/client:latest'
-                    docker_image_server='dspanihousekeep/server:latest'
+                    docker_image_client='dspani/housekeepclient:latest'
+                    docker_image_server='dspani/housekeepserver:latest'
                 }
             }
         }
