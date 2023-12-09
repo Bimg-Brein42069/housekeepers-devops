@@ -3,23 +3,23 @@
   tasks:
     - name: Pull Housekeepers-Server image
       docker_image:
-        name: dspanihousekeep/server
+        name: dspani/housekeepserver
         source: pull
         pull : true
     - name: Run docker server image
       docker_container:
         name: Housekeepers-Server
-        image: dspanihousekeep/server
+        image: dspani/housekeepserver
         ports: 
           - "5000:5000"
     - name: Pull Housekeepers-Client image
       docker_image:
-        name: dspanihousekeep/client
+        name: dspani/housekeepclient
         source: pull
         pull : true
     - name: Run docker client image
       docker_container:
         name: Housekeepers-Client
-        image: dspanihousekeep/client
+        image: dspani/housekeepclient
         ports: 
           - "3000:3000"

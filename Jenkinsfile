@@ -3,6 +3,7 @@ pipeline{
         docker_image_server=""
         docker_image_client=""
         CI=false
+        DOCKERHUB_CREDENTIALS=credentials('DockerHubCred')
     }
     agent any
     stages{
@@ -39,10 +40,9 @@ pipeline{
         stage('Push images to dockerhub'){
             steps{
                 script{
-                    docker.withRegistry('','DockerHubCred'){
-                        docker_image_client.push()
-                        docker_image_server.push()
-                    }
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                    sh 'docker push dspani/housekeepclient:latest'
+                    sh 'docker push dspani/housekeepserver:latest'
                 }
             }
         }
@@ -65,6 +65,11 @@ pipeline{
                 playbook: './ansible-playbook.yml',
                 sudoUser: null
             }
+        }
+    }
+    post {
+        always {
+            sh 'docker logout'
         }
     }
 }

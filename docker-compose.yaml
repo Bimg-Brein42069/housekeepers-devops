@@ -1,11 +1,11 @@
 services:
   webserver:
-    image: "dspanihousekeep:server"
+    image: "dspani/housekeepserver"
     build: ./server
     ports: 
       - "5000:5000"
   webclient:
-    image: "dspanihousekeep:client"
+    image: "dspani/housekeepclient"
     build: ./client
     ports:
       - "3000:3000"
