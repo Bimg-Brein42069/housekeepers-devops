@@ -19,3 +19,40 @@
 2023-12-09 10:00:41, error, Login failure - Winston message
 2023-12-09 10:04:18, info, Inside login method - Winston message
 2023-12-09 10:04:18, error, Login failure - Winston message
+2023-12-09 16:52:10, info, Inside student signup method - Winston message
+2023-12-09 16:52:10, error, Student signup failure - Winston message
+2023-12-09 16:52:10, info, Inside student signup method - Winston message
+2023-12-09 16:52:54, info, Inside student signup method - Winston message
+2023-12-09 16:52:54, error, Student signup failure - Winston message
+2023-12-09 16:52:54, info, Inside student signup method - Winston message
+2023-12-09 16:52:59, info, Inside login method - Winston message
+2023-12-09 16:53:01, error, Login failure - Winston message
+2023-12-09 16:53:01, info, Inside login method - Winston message
+2023-12-09 16:53:02, info, Inside user token generation method - Winston message
+2023-12-09 16:53:02, info, User logged in successfully - Winston message
+2023-12-09 16:53:02, info, Inside admin signup method - Winston message
+2023-12-09 16:53:02, error, Admin signup failure - Winston message
+2023-12-09 16:54:55, info, Inside student signup method - Winston message
+2023-12-09 16:54:55, error, Student signup failure - Winston message
+2023-12-09 16:54:55, info, Inside student signup method - Winston message
+2023-12-09 16:55:05, error, Student signup failure - Winston message
+2023-12-09 16:55:05, info, Inside login method - Winston message
+2023-12-09 16:55:05, error, Login failure - Winston message
+2023-12-09 16:55:05, info, Inside login method - Winston message
+2023-12-09 16:55:06, info, Inside user token generation method - Winston message
+2023-12-09 16:55:06, info, User logged in successfully - Winston message
+2023-12-09 16:55:06, info, Inside admin signup method - Winston message
+2023-12-09 16:55:06, error, Admin signup failure - Winston message
+2023-12-09 16:57:39, info, Inside student signup method - Winston message
+2023-12-09 16:57:39, error, Student signup failure - Winston message
+2023-12-09 16:57:39, info, Inside student signup method - Winston message
+2023-12-09 16:57:49, error, Student signup failure - Winston message
+2023-12-09 16:57:49, info, Inside login method - Winston message
+2023-12-09 16:57:50, error, Login failure - Winston message
+2023-12-09 16:57:50, info, Inside login method - Winston message
+2023-12-09 16:57:51, info, Inside user token generation method - Winston message
+2023-12-09 16:57:51, info, User logged in successfully - Winston message
+2023-12-09 16:57:51, info, Inside admin signup method - Winston message
+2023-12-09 16:57:51, error, Admin signup failure - Winston message
+2023-12-09 16:57:51, info, Inside admin signup method - Winston message
+2023-12-09 16:57:51, error, Admin signup failure - Winston message
