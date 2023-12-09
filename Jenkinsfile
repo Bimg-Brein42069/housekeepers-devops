@@ -2,6 +2,7 @@ pipeline{
     environment{
         docker_image_server=""
         docker_image_client=""
+        CI=false
     }
     agent any
     stages{
