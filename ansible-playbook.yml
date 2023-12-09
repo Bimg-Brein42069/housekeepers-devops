@@ -5,7 +5,6 @@
       docker_image:
         name: dspani/housekeepserver
         source: pull
-        pull : true
     - name: Run docker server image
       docker_container:
         name: Housekeepers-Server
@@ -16,7 +15,6 @@
       docker_image:
         name: dspani/housekeepclient
         source: pull
-        pull : true
     - name: Run docker client image
       docker_container:
         name: Housekeepers-Client
