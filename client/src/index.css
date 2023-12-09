@@ -117,9 +117,11 @@ nav {
   display: flex;
   align-items: center;
 }
+
 nav a, nav button {
   margin-left: 10px;
 }
+
 nav button {
   background: #fff;
   color: var(--primary);

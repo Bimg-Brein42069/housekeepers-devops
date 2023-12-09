@@ -1,0 +1,24 @@
+- name: Pull and Run docker image
+  hosts: localhost
+  tasks:
+    - name: Stop already running docker container
+      docker_container: 
+        name: Housekeepers-Server
+        image: dspanihousekeep/server
+        state: absent
+    - name: Remove already existing docker image
+      docker_image:
+        name: dspanihousekeep/server
+        force: true
+        state: absent
+    - name: Pull Housekeepers-Server image
+      docker_image:
+        name: dspanihousekeep/server
+        source: pull
+        pull : true
+    - name: Run docker image
+      docker_container:
+        name: Housekeepers-Server
+        image: dspanihousekeep/server
+        ports: 
+          - "5000:5000"

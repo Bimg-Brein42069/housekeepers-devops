@@ -30,3 +30,5 @@ mongoose.connect(uri)
     console.log(err);
 })
 
+module.exports = app;
+

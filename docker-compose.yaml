@@ -1,0 +1,14 @@
+services:
+  webserver:
+    build: ./server
+    ports: 
+      - "5000:5000"
+  webclient:
+    build: ./client
+    ports:
+      - "3000:3000"
+    network_mode: host
+    depends_on:
+      - webserver
+  redis:
+    image: "redis:alpine"

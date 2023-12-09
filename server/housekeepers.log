@@ -1,0 +1,21 @@
+2023-12-09 10:00:10, info, Inside login method - Winston message
+2023-12-09 10:00:10, error, Login failure - Winston message
+2023-12-09 10:00:11, info, Inside login method - Winston message
+2023-12-09 10:00:11, info, Inside user token generation method - Winston message
+2023-12-09 10:00:11, info, User logged in successfully - Winston message
+2023-12-09 10:00:11, info, Inside complaint list method - Winston Message
+2023-12-09 10:00:11, info, Non-admin user complaint list method successful - Winston Message
+2023-12-09 10:00:12, info, Inside complaint list method - Winston Message
+2023-12-09 10:00:12, info, Non-admin user complaint list method successful - Winston Message
+2023-12-09 10:00:19, info, Inside complaint creation method - Winston Message
+2023-12-09 10:00:19, error, Incomplete form - Winston Message
+2023-12-09 10:00:22, info, Inside complaint creation method - Winston Message
+2023-12-09 10:00:22, info, Complaint created successfully - Winston Message
+2023-12-09 10:00:25, info, Inside complaint deletion method - Winston Message
+2023-12-09 10:00:25, info, Complaint deletion successful - Winston Message
+2023-12-09 10:00:30, info, Inside complaint creation method - Winston Message
+2023-12-09 10:00:30, info, Complaint created successfully - Winston Message
+2023-12-09 10:00:41, info, Inside login method - Winston message
+2023-12-09 10:00:41, error, Login failure - Winston message
+2023-12-09 10:04:18, info, Inside login method - Winston message
+2023-12-09 10:04:18, error, Login failure - Winston message
