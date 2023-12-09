@@ -1,5 +1,1 @@
-[localhost]
-127.0.0.1 ansible_user=dspani
-
-[localhostmint]
-127.0.0.1 ansible_user=dspanimints
+localhost ansible_user=dspani
