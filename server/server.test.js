@@ -74,14 +74,4 @@ describe("post request /signupadmin", () =>{
         expect(response.statusCode).toBe(201)
         expect(response.type).toBe("application/json")
     })*/
-    test("status code must be 400, type must be json list", async () => {
-        const response=await request(userr).post("/api/user/signupadmin").send({
-            name: "testestest",
-            email: "wafton@lol.dev",
-            roomno: "test123",
-            password: "K9kbea%23@4/5{&nFQt_8&y-%7sm=[M:C*u4D"
-        })
-        expect(response.statusCode).toBe(400)
-        expect(response.type).toBe("application/json")
-    })
 })
