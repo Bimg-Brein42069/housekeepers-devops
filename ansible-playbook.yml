@@ -5,19 +5,15 @@
       docker_image:
         name: dspani/housekeepserver
         source: pull
-    - name: Run docker server image
+    - name: Create docker server image
       docker_container:
         name: Housekeepers-Server
-        image: dspani/housekeepserver
-        ports: 
-          - "5000:5000"
+        shell: docker create -it --name Housekeepers-Server dspani/housekeepserver
     - name: Pull Housekeepers-Client image
       docker_image:
         name: dspani/housekeepclient
         source: pull
-    - name: Run docker client image
+    - name: Create docker server image
       docker_container:
-        name: Housekeepers-Client
-        image: dspani/housekeepclient
-        ports: 
-          - "3000:3000"
+        name: Housekeepers-Server
+        shell: docker create -it --name Housekeepers-Client dspani/housekeepclient
