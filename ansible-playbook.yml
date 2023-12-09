@@ -6,14 +6,10 @@
         name: dspani/housekeepserver
         source: pull
     - name: Create docker server image
-      docker_container:
-        name: Housekeepers-Server
-        shell: docker create -it --name Housekeepers-Server dspani/housekeepserver
+      shell: docker create -it --name Housekeepers-Server dspani/housekeepserver
     - name: Pull Housekeepers-Client image
       docker_image:
         name: dspani/housekeepclient
         source: pull
     - name: Create docker server image
-      docker_container:
-        name: Housekeepers-Server
-        shell: docker create -it --name Housekeepers-Client dspani/housekeepclient
+      shell: docker create -it --name Housekeepers-Client dspani/housekeepclient
