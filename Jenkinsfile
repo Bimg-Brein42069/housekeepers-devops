@@ -5,7 +5,6 @@ pipeline{
         CI=false
     }
     agent any
-    tools {nodejs "nodejs"}
     stages{
         stage('Stage 1: Clone git repo'){
             steps{
