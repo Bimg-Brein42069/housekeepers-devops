@@ -14,7 +14,7 @@ pipeline{
         }
         stage('Build Server'){
             steps{
-                sh 'cd server && npm install'
+                sh 'cd server && npm install --loglevel=error'
             }
         }
         stage('Test API endpoints'){
@@ -24,7 +24,7 @@ pipeline{
         }
         stage('Build Client'){
             steps{
-                sh 'cd client && npm install'
+                sh 'cd client && npm install --loglevel=error'
             }
         }
         stage('Build docker images'){
