@@ -1,6 +1,8 @@
 const request= require('supertest')
 const userr = require('./server')
 
+/*code in comments has been tested once, will not test again because of duplication.*/
+
 describe("post request /signup", () =>{
     test("status code must be 400, type must be json list", async () => {
         const response=await request(userr).post("/api/user/signup").send({
@@ -76,9 +78,9 @@ describe("post request /signupadmin", () =>{
     })*/
     test("status code must be 400, type must be json list", async () => {
         const response=await request(userr).post("/api/user/signupadmin").send({
-            name: "testest",
+            name: "William Afton",
             email: "wafton@lol.dev",
-            roomno: "test",
+            roomno: "A203",
             password: "6X_V}63i[Yx.6}D%4}7MeNi/,Hp]9eFj"
         })
         expect(response.statusCode).toBe(400)

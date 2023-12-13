@@ -1,10 +1,12 @@
 const jwt=require('jsonwebtoken')
 const User=require('../models/usermodel')
+const logger=require('../loggers/logConfig')
 const requireAuth = async (req,res,next) => {
     //verify authentication
     const { authorization } = req.headers
     if(!authorization){
-        return res.status(401).json({error: 'Authorization token required'})
+        logger.error("Unauthorized - Winston Message")
+        return res.status(401).json({error: 'Unauthorized'})
     }
     
     const token = authorization.split(' ')[1]
@@ -13,7 +15,7 @@ const requireAuth = async (req,res,next) => {
         req.user=await User.findOne({_id}).select('_id')
         next()
     }catch(err){
-        console.log(err)
+        logger.error("Unauthorized - Winston Message")
         res.status(401).json({error: 'Unauthorized'})
     }
 }

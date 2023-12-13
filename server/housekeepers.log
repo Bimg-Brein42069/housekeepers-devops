@@ -56,3 +56,72 @@
 2023-12-09 16:57:51, error, Admin signup failure - Winston message
 2023-12-09 16:57:51, info, Inside admin signup method - Winston message
 2023-12-09 16:57:51, error, Admin signup failure - Winston message
+2023-12-13 08:58:39, info, Inside login method - Winston message
+2023-12-13 08:58:40, info, Inside user token generation method - Winston message
+2023-12-13 08:58:40, info, User logged in successfully - Winston message
+2023-12-13 08:58:41, info, Inside complaint list method - Winston Message
+2023-12-13 08:58:42, info, Non-admin user complaint list method successful - Winston Message
+2023-12-13 08:58:43, info, Inside complaint list method - Winston Message
+2023-12-13 08:58:44, info, Non-admin user complaint list method successful - Winston Message
+2023-12-13 08:58:48, info, Inside complaint creation method - Winston Message
+2023-12-13 08:58:49, info, Complaint created successfully - Winston Message
+2023-12-13 08:58:49, info, Inside complaint creation method - Winston Message
+2023-12-13 08:58:50, info, Inside complaint creation method - Winston Message
+2023-12-13 08:58:50, error, Incomplete form - Winston Message
+2023-12-13 08:58:50, info, Complaint created successfully - Winston Message
+2023-12-13 08:58:53, info, Inside complaint deletion method - Winston Message
+2023-12-13 08:58:53, info, Complaint deletion successful - Winston Message
+2023-12-13 08:59:01, info, Inside complaint creation method - Winston Message
+2023-12-13 08:59:02, info, Complaint created successfully - Winston Message
+2023-12-13 09:06:10, info, Inside student signup method - Winston message
+2023-12-13 09:06:10, error, Student signup failure - Winston message
+2023-12-13 09:06:10, info, Inside student signup method - Winston message
+2023-12-13 09:06:23, info, Inside user token generation method - Winston message
+2023-12-13 09:06:23, info, New student signed in successfully - Winston message
+2023-12-13 09:06:23, info, Inside login method - Winston message
+2023-12-13 09:06:23, error, Login failure - Winston message
+2023-12-13 09:06:23, info, Inside login method - Winston message
+2023-12-13 09:06:24, info, Inside user token generation method - Winston message
+2023-12-13 09:06:24, info, User logged in successfully - Winston message
+2023-12-13 09:06:24, info, Inside admin signup method - Winston message
+2023-12-13 09:06:24, error, Admin signup failure - Winston message
+2023-12-13 09:06:24, info, Inside admin signup method - Winston message
+2023-12-13 09:06:25, info, Inside user token generation method - Winston message
+2023-12-13 09:06:25, info, New admin signed in successfully - Winston message
+2023-12-13 09:07:27, info, Inside student signup method - Winston message
+2023-12-13 09:07:27, error, Student signup failure - Winston message
+2023-12-13 09:07:27, info, Inside student signup method - Winston message
+2023-12-13 09:07:38, error, Student signup failure - Winston message
+2023-12-13 09:07:38, info, Inside login method - Winston message
+2023-12-13 09:07:39, error, Login failure - Winston message
+2023-12-13 09:07:39, info, Inside login method - Winston message
+2023-12-13 09:07:39, info, Inside user token generation method - Winston message
+2023-12-13 09:07:39, info, User logged in successfully - Winston message
+2023-12-13 09:07:39, info, Inside admin signup method - Winston message
+2023-12-13 09:07:39, error, Admin signup failure - Winston message
+2023-12-13 09:07:39, info, Inside admin signup method - Winston message
+2023-12-13 09:07:40, error, Admin signup failure - Winston message
+2023-12-13 09:08:37, info, Inside login method - Winston message
+2023-12-13 09:08:38, info, Inside user token generation method - Winston message
+2023-12-13 09:08:38, info, User logged in successfully - Winston message
+2023-12-13 09:08:39, info, Inside complaint list method - Winston Message
+2023-12-13 09:08:40, info, Admin user complaint list method successful - Winston Message
+2023-12-13 09:08:41, info, Inside complaint list method - Winston Message
+2023-12-13 09:08:42, info, Admin user complaint list method successful - Winston Message
+2023-12-13 09:08:46, info, Inside complaint update method - Winston Message
+2023-12-13 09:08:46, info, Complaint updated successfully - Winston Message
+2023-12-13 09:08:49, info, Inside complaint list method - Winston Message
+2023-12-13 09:08:50, info, Admin user complaint list method successful - Winston Message
+2023-12-13 09:08:51, info, Inside complaint list method - Winston Message
+2023-12-13 09:08:52, info, Admin user complaint list method successful - Winston Message
+2023-12-13 09:09:17, info, Inside login method - Winston message
+2023-12-13 09:09:18, info, Inside user token generation method - Winston message
+2023-12-13 09:09:18, info, User logged in successfully - Winston message
+2023-12-13 09:09:19, info, Inside complaint list method - Winston Message
+2023-12-13 09:09:20, info, Non-admin user complaint list method successful - Winston Message
+2023-12-13 09:09:20, info, Inside complaint list method - Winston Message
+2023-12-13 09:09:21, info, Non-admin user complaint list method successful - Winston Message
+2023-12-13 09:09:38, info, Inside complaint update method - Winston Message
+2023-12-13 09:09:39, info, Complaint updated successfully - Winston Message
+2023-12-13 09:09:59, info, Inside complaint deletion method - Winston Message
+2023-12-13 09:09:59, info, Complaint deletion successful - Winston Message
